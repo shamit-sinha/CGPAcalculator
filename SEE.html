@@ -1,0 +1,339 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vintage-brown: #6b4f4f;
+            --parchment: #f5e6d3;
+            --ink: #2a2723;
+            --accent-gold: #c5a47e;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background: url('data:image/png;base64,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');
+            color: var(--ink);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--parchment);
+            border: 3px double var(--vintage-brown);
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        h2 {
+            font-family:'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif, cursive;
+            color: var(--vintage-brown);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 1rem;
+        }
+
+        .subject-group {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border: 1px dashed var(--accent-gold);
+            border-radius: 3px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .subject-group h4 {
+            margin: 0 0 1rem 0;
+            color: var(--vintage-brown);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .input-row input {
+            width: 120px;
+            padding: 0.5rem;
+            border: 1px solid var(--vintage-brown);
+            border-radius: 3px;
+            background: rgba(255,255,255,0.8);
+            font-family: 'Playfair Display', serif;
+            color: var(--ink);
+            transition: all 0.3s ease;
+        }
+
+        .input-row input:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--accent-gold);
+        }
+
+        button {
+            background: var(--vintage-brown);
+            color: var(--parchment);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 2rem auto;
+            width: 200px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .result {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid var(--vintage-brown);
+            border-radius: 5px;
+            display: none;
+        }
+
+        .result h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--vintage-brown);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .grade-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .subject-result {
+            padding: 1rem;
+            border: 1px solid var(--accent-gold);
+            border-radius: 3px;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .subject-result h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--vintage-brown);
+            font-size: 0.9rem;
+        }
+
+        .grade-point {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .cgpa-display {
+            text-align: center;
+            padding: 2rem;
+            background: var(--vintage-brown);
+            color: var(--parchment);
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 3px solid var(--accent-gold);
+        }
+
+        .cgpa-display span:first-child {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .cgpa-value {
+            font-size: 2.5rem;
+            font-family: 'Cinzel', serif;
+            margin-top: 0.5rem;
+        }
+
+        .error {
+            color: #b71c1c;
+            text-align: center;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .grade-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-row {
+                flex-direction: column;
+            }
+            
+            .input-row input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>CGPA Calculator</h2>
+        
+        <!-- Subject Groups -->
+        <div class="subject-group">
+            <h4>1. Physics/Chemistry</h4>
+            <div class="input-row">
+                <input type="number" id="pc-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="pc-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>2. Mathematics</h4>
+            <div class="input-row">
+                <input type="number" id="maths-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="maths-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>3. Core Subject</h4>
+            <div class="input-row">
+                <input type="number" id="core-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="core-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>4. ESC</h4>
+            <div class="input-row">
+                <input type="number" id="esc-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="esc-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>5. ETC/Language</h4>
+            <div class="input-row">
+                <input type="number" id="etc-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="etc-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>6. Kannada/Yoga</h4>
+            <div class="input-row">
+                <input type="number" id="kannada-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="kannada-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>7. Indian Constitution</h4>
+            <div class="input-row">
+                <input type="number" id="constitution-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="constitution-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <h4>8. English</h4>
+            <div class="input-row">
+                <input type="number" id="english-cie" placeholder="CIE (0-50)" min="0" max="50">
+                <input type="number" id="english-see" placeholder="SEE (0-50)" min="0" max="50">
+            </div>
+        </div>
+
+        <button onclick="calculateCGPA()">Calculate</button>
+        <div class="error" id="errorMessage"></div>
+
+        <div class="result" id="result">
+            <h3>Proclamation of Knowledge</h3>
+            <div class="grade-card" id="subjectResults"></div>
+            <div class="cgpa-display">
+                <span>Sacred CGPA</span>
+                <div class="cgpa-value" id="cgpaValue"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateCGPA() {
+            const subjects = [
+                { id: 'pc', name: 'Physics/Chemistry', weight: 4 },
+                { id: 'maths', name: 'Mathematics', weight: 4 },
+                { id: 'core', name: 'Core Subject', weight: 3 },
+                { id: 'esc', name: 'ESC', weight: 3 },
+                { id: 'etc', name: 'ETC/Language', weight: 3 },
+                { id: 'kannada', name: 'Kannada/Yoga', weight: 1 },
+                { id: 'constitution', name: 'Indian Constitution', weight: 1 },
+                { id: 'english', name: 'English', weight: 1 }
+            ];
+
+            let total = 0;
+            let error = false;
+            let resultsHTML = '';
+            
+            subjects.forEach(subject => {
+                const cie = parseFloat(document.getElementById(`${subject.id}-cie`).value);
+                const see = parseFloat(document.getElementById(`${subject.id}-see`).value);
+                const totalMarks = cie + see;
+                
+                if(isNaN(cie) || isNaN(see) || cie < 0 || cie > 50 || see < 0 || see > 50) {
+                    error = true;
+                    return;
+                }
+
+                const gradePoint = getGradePoint(totalMarks);
+                total += gradePoint * subject.weight;
+                
+                resultsHTML += `
+                    <div class="subject-result">
+                        <h4>${subject.name}</h4>
+                        <div>CIE: ${cie} | SEE: ${see}</div>
+                        <div>Total: ${totalMarks}</div>
+                        <div class="grade-point">Grade Point: ${gradePoint}</div>
+                    </div>`;
+            });
+
+            if(error) {
+                document.getElementById('errorMessage').textContent = '✦ All fields must contain valid marks (0-50) ✦';
+                document.getElementById('result').style.display = 'none';
+                return;
+            }
+
+            const cgpa = total / 20;
+            document.getElementById('subjectResults').innerHTML = resultsHTML;
+            document.getElementById('cgpaValue').textContent = cgpa.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('errorMessage').textContent = '';
+        }
+
+        function getGradePoint(marks) {
+            if(marks >= 90) return 10;
+            if(marks >= 80) return 9;
+            if(marks >= 70) return 8;
+            if(marks >= 60) return 7;
+            if(marks >= 50) return 6;
+            if(marks >= 40) return 4;
+            return 0;
+        }
+    </script>
+</body>
+</html>
