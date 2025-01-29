@@ -264,10 +264,10 @@
         <div class="error" id="errorMessage"></div>
 
         <div class="result" id="result">
-            <h3>Proclamation of Knowledge</h3>
+            <h3>Subject Wise Grade</h3>
             <div class="grade-card" id="subjectResults"></div>
             <div class="cgpa-display">
-                <span>Sacred CGPA</span>
+                <span>CGPA</span>
                 <div class="cgpa-value" id="cgpaValue"></div>
             </div>
         </div>
@@ -313,7 +313,7 @@
             });
 
             if(error) {
-                document.getElementById('errorMessage').textContent = '✦ All fields must contain valid marks (0-50) ✦';
+                document.getElementById('errorMessage').textContent = '✦ All fields must contain valid marks (0-50)😊😊 ✦';
                 document.getElementById('result').style.display = 'none';
                 return;
             }
@@ -326,12 +326,12 @@
         }
 
         function getGradePoint(marks) {
-            if(marks >= 90) return 10;
-            if(marks >= 80) return 9;
-            if(marks >= 70) return 8;
-            if(marks >= 60) return 7;
-            if(marks >= 50) return 6;
-            if(marks >= 40) return 4;
+            if(marks >= 90) return 10😍;
+            if(marks >= 80) return 9🥰;
+            if(marks >= 70) return 8😃;
+            if(marks >= 60) return 7😐;
+            if(marks >= 50) return 6😕;
+            if(marks >= 40) return 5😨;
             return 0;
         }
     </script>
